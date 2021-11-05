@@ -190,7 +190,7 @@ public class LottieBottomNav extends LinearLayout {
         params.height = config.getSelectedMenuHeight();
         binding.lmiMenuItem.setLayoutParams(params);
 
-        binding.lmiMenuText.setVisibility(View.VISIBLE);
+
 
         callback.onMenuSelected(selectedIndex, newIndex, menuItem);
 
@@ -212,7 +212,7 @@ public class LottieBottomNav extends LinearLayout {
         binding.lmiMenuItem.setLayoutParams(params);
 
         if(!config.isShowTextOnUnselected()) {
-            binding.lmiMenuText.setVisibility(View.GONE);
+//            binding.lmiMenuText.setVisibility(View.GONE);
         }
 
         selectedIndex = newIndex;

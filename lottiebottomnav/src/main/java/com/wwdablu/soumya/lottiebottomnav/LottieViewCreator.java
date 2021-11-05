@@ -39,7 +39,7 @@ final class LottieViewCreator {
         binder.lmiMenuItem.setLayoutParams(params);
 
         if(!config.isShowTextOnUnselected()) {
-            binder.lmiMenuText.setVisibility(isSelected ? View.VISIBLE : View.INVISIBLE);
+//            binder.lmiMenuText.setVisibility(isSelected ? View.VISIBLE : View.INVISIBLE);
         }
 
         return binder;
