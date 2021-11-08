@@ -11,6 +11,11 @@ final class LottieBottomNavCallbackImpl implements ILottieBottomNavCallback {
     }
 
     @Override
+    public void onMenuSelectedStart(int newIndex) {
+
+    }
+
+    @Override
     public void onAnimationStart(int index, MenuItem menuItem) {
         //
     }

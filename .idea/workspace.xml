@@ -10,11 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d872452-adf8-408f-83d8-9c95bcd05579" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sample/src/main/assets/tab_car_dark.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample/src/main/assets/tab_find_dark.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample/src/main/assets/tab_map_dark.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample/src/main/assets/tab_me_dark.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample/src/main/assets/tab_store_dark.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -25,29 +20,19 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottiebottomnav/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/lottiebottomnav/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottiebottomnav/src/main/java/com/wwdablu/soumya/lottiebottomnav/ILottieBottomNavCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottiebottomnav/src/main/java/com/wwdablu/soumya/lottiebottomnav/ILottieBottomNavCallback.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lottiebottomnav/src/main/java/com/wwdablu/soumya/lottiebottomnav/LottieBottomNav.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottiebottomnav/src/main/java/com/wwdablu/soumya/lottiebottomnav/LottieBottomNav.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottiebottomnav/src/main/java/com/wwdablu/soumya/lottiebottomnav/LottieViewCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottiebottomnav/src/main/java/com/wwdablu/soumya/lottiebottomnav/LottieViewCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottiebottomnav/src/main/res/layout/lottie_menu_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lottiebottomnav/src/main/res/layout/lottie_menu_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/sample/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/assets/tab_find.json" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/assets/tab_find.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/assets/tab_map.json" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/assets/tab_map.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/assets/tab_me.json" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/assets/tab_me.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/assets/tab_store.json" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/assets/tab_store.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottiebottomnav/src/main/java/com/wwdablu/soumya/lottiebottomnav/LottieBottomNavCallbackImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottiebottomnav/src/main/java/com/wwdablu/soumya/lottiebottomnav/LottieBottomNavCallbackImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lottiebottomnav/src/main/java/com/wwdablu/soumya/lottiebottomnav/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/lottiebottomnav/src/main/java/com/wwdablu/soumya/lottiebottomnav/MenuItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sample/src/main/java/com/wwdablu/soumya/lottiebottomnavsample/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/java/com/wwdablu/soumya/lottiebottomnavsample/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/res/layout/fragment_gift.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/layout/fragment_gift.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/layout/fragment_home.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/mashihao/.android/avd/New_Device_API_29.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DXU7N18528001462]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />

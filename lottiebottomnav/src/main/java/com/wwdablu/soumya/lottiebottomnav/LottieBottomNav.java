@@ -39,6 +39,7 @@ public class LottieBottomNav extends LinearLayout {
 
     /**
      * Assign the menu items that are to be displayed
+     *
      * @param menuItemList List of menu items
      */
     public void setMenuItemList(@NonNull List<MenuItem> menuItemList) {
@@ -51,7 +52,7 @@ public class LottieBottomNav extends LinearLayout {
 
     public void updateMenuItemFor(int index, @NonNull MenuItem menuItem) {
 
-        if(menuItemList == null || index < 0 || index > menuItemList.size()) {
+        if (menuItemList == null || index < 0 || index > menuItemList.size()) {
             return;
         }
 
@@ -68,9 +69,7 @@ public class LottieBottomNav extends LinearLayout {
         binder.getRoot().setTag(index);
         binder.getRoot().setOnClickListener(view -> switchSelectedMenu((int) view.getTag()));
         binder.lmiMenuItem.addAnimatorListener(animatorListener);
-        if(!config.isShowTextOnUnselected()) {
-            binder.lmiMenuText.setVisibility(isSelected(index) ? View.VISIBLE : View.INVISIBLE);
-        }
+
         addView(binder.getRoot(), index);
         binder.lmiMenuItem.setProgress(0F);
         binder.lmiMenuItem.playAnimation();
@@ -78,11 +77,12 @@ public class LottieBottomNav extends LinearLayout {
 
     /**
      * Set the index of the to be displayed as selected
+     *
      * @param index Index
      */
     public void setSelectedIndex(int index) {
 
-        if(lottieViews == null || lottieViews.size() == 0 || selectedIndex == index) {
+        if (lottieViews == null || lottieViews.size() == 0 || selectedIndex == index) {
             return;
         }
 
@@ -95,6 +95,7 @@ public class LottieBottomNav extends LinearLayout {
 
     /**
      * Returns the currently selected menu index
+     *
      * @return Index
      */
     public int getSelectedIndex() {
@@ -103,13 +104,14 @@ public class LottieBottomNav extends LinearLayout {
 
     /**
      * Returns the menu item associated with the index
+     *
      * @param index Index
      * @return MenuItem
      */
     @Nullable
     public MenuItem getMenuItemFor(int index) {
 
-        if(menuItemList == null || index < 0 || index > menuItemList.size()) {
+        if (menuItemList == null || index < 0 || index > menuItemList.size()) {
             return null;
         }
 
@@ -118,6 +120,7 @@ public class LottieBottomNav extends LinearLayout {
 
     /**
      * Sets the callback to listen for the menu changes
+     *
      * @param callback Callback
      */
     public void setCallback(@Nullable ILottieBottomNavCallback callback) {
@@ -139,13 +142,13 @@ public class LottieBottomNav extends LinearLayout {
         int index = 0;
         lottieViews.clear();
 
-        for(MenuItem menuItem : menuItemList) {
+        for (MenuItem menuItem : menuItemList) {
             LottieMenuItemBinding binder = LottieViewCreator.from(this, menuItem, selectedIndex == index, config);
             binder.getRoot().setTag(index);
             binder.getRoot().setOnClickListener(view -> switchSelectedMenu((int) view.getTag()));
             binder.lmiMenuItem.addAnimatorListener(animatorListener);
 
-            if(index == selectedIndex) {
+            if (index == selectedIndex) {
                 binder.lmiMenuItem.setProgress(0F);
                 binder.lmiMenuItem.playAnimation();
             }
@@ -154,7 +157,7 @@ public class LottieBottomNav extends LinearLayout {
             index++;
         }
 
-        if(getWidth() == 0) {
+        if (getWidth() == 0) {
             getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                 @Override
                 public void onGlobalLayout() {
@@ -169,19 +172,20 @@ public class LottieBottomNav extends LinearLayout {
 
     private void switchSelectedMenu(int newIndex) {
 
-        if(newIndex == selectedIndex) {
+        if (newIndex == selectedIndex) {
             return;
         }
 
+        callback.onMenuSelectedStart(newIndex);
+
         //Pause any existing, or else it might impact
+
         lottieViews.get(selectedIndex).lmiMenuItem.pauseAnimation();
 
         LottieMenuItemBinding binding = lottieViews.get(newIndex);
         MenuItem menuItem = menuItemList.get(newIndex);
 
         binding.lmiMenuItem.setAnimation(menuItem.selectedLottieName);
-        binding.lmiMenuText.setTextColor(menuItem.fontItem.getTextSelectedColor());
-        binding.lmiMenuText.setTextSize(TypedValue.COMPLEX_UNIT_SP, menuItem.fontItem.getSelectedTextSize());
 
         binding.lmiMenuItem.playAnimation();
 
@@ -189,27 +193,27 @@ public class LottieBottomNav extends LinearLayout {
         binding.lmiMenuItem.setLayoutParams(params);
 
 
-
         callback.onMenuSelected(selectedIndex, newIndex, menuItem);
 
+
+        //设置未选中 的 menu
         //Set the unselected menu item properties
 
-        binding = lottieViews.get(selectedIndex);
-        menuItem = menuItemList.get(selectedIndex);
+        for (int i = 0; i < lottieViews.size(); i++) {
+            if (i != newIndex) {
+                binding = lottieViews.get(i);
+                menuItem = menuItemList.get(i);
 
-        binding.lmiMenuItem.setAnimation(menuItem.unselectedLottieName);
-        binding.lmiMenuText.setTextColor(menuItem.fontItem.getTextUnselectedColor());
-        binding.lmiMenuText.setTextSize(TypedValue.COMPLEX_UNIT_SP, menuItem.fontItem.getUnselectedTextSize());
+                binding.lmiMenuItem.setAnimation(menuItem.unselectedLottieName);
 
-        binding.lmiMenuItem.pauseAnimation();
-        binding.lmiMenuItem.setProgress(menuItem.lottieProgress);
+                binding.lmiMenuItem.pauseAnimation();
+                binding.lmiMenuItem.setProgress(menuItem.lottieProgress);
 
-        params = binding.lmiMenuItem.getLayoutParams();
-        binding.lmiMenuItem.setLayoutParams(params);
-
-        if(!config.isShowTextOnUnselected()) {
-//            binding.lmiMenuText.setVisibility(View.GONE);
+                params = binding.lmiMenuItem.getLayoutParams();
+                binding.lmiMenuItem.setLayoutParams(params);
+            }
         }
+
 
         selectedIndex = newIndex;
     }
@@ -220,7 +224,7 @@ public class LottieBottomNav extends LinearLayout {
 
         int menuItemWidth = getWidth() / menuItemList.size();
 
-        for(LottieMenuItemBinding binding : lottieViews) {
+        for (LottieMenuItemBinding binding : lottieViews) {
             View view = binding.getRoot();
 
             ViewGroup.LayoutParams params = binding.menuContainer.getLayoutParams();
@@ -236,7 +240,7 @@ public class LottieBottomNav extends LinearLayout {
     private void extractProperties(@Nullable AttributeSet attributeSet) {
 
         config = new Config(getContext());
-        if(attributeSet == null) {
+        if (attributeSet == null) {
             return;
         }
 

@@ -12,6 +12,22 @@ public class MenuItem {
     String selectedLottieName;
     String unselectedLottieName;
 
+    public String getSelectedLottieName() {
+        return selectedLottieName;
+    }
+
+    public void setSelectedLottieName(String selectedLottieName) {
+        this.selectedLottieName = selectedLottieName;
+    }
+
+    public String getUnselectedLottieName() {
+        return unselectedLottieName;
+    }
+
+    public void setUnselectedLottieName(String unselectedLottieName) {
+        this.unselectedLottieName = unselectedLottieName;
+    }
+
     Source lottieSource;
     float  lottieProgress;
 

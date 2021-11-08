@@ -92,14 +92,35 @@ public class MainActivity extends AppCompatActivity implements ILottieBottomNavC
         bottomNav.setSelectedIndex(1);
     }
 
+    private void updateResource(boolean isDark) {
+        //TODO 修改 第一个tab 样式
+        bottomNav.getMenuItemFor(0).setSelectedLottieName(isDark ? "message_cupid.json" : "settings.json");
+        bottomNav.getMenuItemFor(0).setUnselectedLottieName(isDark ? "message_cupid.json" : "settings.json");
+
+        bottomNav.getMenuItemFor(1).setSelectedLottieName(isDark ? "tab_find_dark.json" : "tab_find.json");
+        bottomNav.getMenuItemFor(1).setUnselectedLottieName(isDark ? "tab_find_dark.json" : "tab_find.json");
+        bottomNav.getMenuItemFor(2).setSelectedLottieName(isDark ? "tab_car_dark.json" : "tab_car.json");
+        bottomNav.getMenuItemFor(2).setUnselectedLottieName(isDark ? "tab_car_dark.json" : "tab_car.json");
+        bottomNav.getMenuItemFor(3).setSelectedLottieName(isDark ? "tab_store_dark.json" : "tab_store.json");
+        bottomNav.getMenuItemFor(3).setUnselectedLottieName(isDark ? "tab_store_dark.json" : "tab_store.json");
+        bottomNav.getMenuItemFor(4).setSelectedLottieName(isDark ? "tab_me_dark.json" : "tab_me.json");
+        bottomNav.getMenuItemFor(4).setUnselectedLottieName(isDark ? "tab_me_dark.json" : "tab_me.json");
+    }
+
+    @Override
+    public void onMenuSelectedStart(int newIndex) {
+        if (newIndex == 2) {
+            bottomNav.setBackgroundColor(Color.parseColor("#18191C"));
+            updateResource(true);
+        } else {
+            updateResource(false);
+            bottomNav.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        }
+    }
+
     @Override
     public void onMenuSelected(int oldIndex, int newIndex, MenuItem menuItem) {
 
-        if (newIndex == 2) {
-            bottomNav.setBackgroundColor(Color.parseColor("#18191C"));
-        } else {
-            bottomNav.setBackgroundColor(Color.parseColor("#FFFFFF"));
-        }
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fl_frag_container, mFragments.get(newIndex), mFragments.get(newIndex).getClass().getSimpleName())
@@ -137,14 +158,15 @@ public class MainActivity extends AppCompatActivity implements ILottieBottomNavC
     @Override
     public void onChangeMenuIcon() {
 
-        if (bottomNav.getSelectedIndex() == 2) {
 
-            MenuItem cupidMessage = MenuItemBuilder.createFrom(bottomNav.getMenuItemFor(2))
-                    .selectedLottieName("message_cupid.json")
-                    .tag("cupid")
-                    .build();
-
-            bottomNav.updateMenuItemFor(2, cupidMessage);
-        }
+//        if (bottomNav.getSelectedIndex() == 2) {
+//
+//            MenuItem cupidMessage = MenuItemBuilder.createFrom(bottomNav.getMenuItemFor(2))
+//                    .selectedLottieName("message_cupid.json")
+//                    .tag("cupid")
+//                    .build();
+//
+//            bottomNav.updateMenuItemFor(2, cupidMessage);
+//        }
     }
 }
