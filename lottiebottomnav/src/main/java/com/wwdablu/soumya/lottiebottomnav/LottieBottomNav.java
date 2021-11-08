@@ -186,8 +186,6 @@ public class LottieBottomNav extends LinearLayout {
         binding.lmiMenuItem.playAnimation();
 
         ViewGroup.LayoutParams params = binding.lmiMenuItem.getLayoutParams();
-        params.width = config.getSelectedMenuWidth();
-        params.height = config.getSelectedMenuHeight();
         binding.lmiMenuItem.setLayoutParams(params);
 
 
@@ -207,8 +205,6 @@ public class LottieBottomNav extends LinearLayout {
         binding.lmiMenuItem.setProgress(menuItem.lottieProgress);
 
         params = binding.lmiMenuItem.getLayoutParams();
-        params.width = config.getUnselectedMenuWidth();
-        params.height = config.getUnselectedMenuHeight();
         binding.lmiMenuItem.setLayoutParams(params);
 
         if(!config.isShowTextOnUnselected()) {

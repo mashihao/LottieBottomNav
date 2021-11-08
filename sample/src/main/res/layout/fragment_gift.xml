@@ -6,9 +6,10 @@
     tools:context=".GiftFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/gift_fragment" />
+        android:id="@+id/lmi_menu_item"
+        />
 
 </FrameLayout>

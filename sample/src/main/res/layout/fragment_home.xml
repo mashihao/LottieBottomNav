@@ -3,12 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/home_fragment" />
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="tab_find.json"
+        />
 
 </FrameLayout>

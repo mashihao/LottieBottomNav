@@ -34,8 +34,6 @@ final class LottieViewCreator {
         setLottieView(binder.lmiMenuItem, menuItem, isSelected);
 
         ViewGroup.LayoutParams params = binder.lmiMenuItem.getLayoutParams();
-        params.width = isSelected ? config.getSelectedMenuWidth() : config.getUnselectedMenuWidth();
-        params.height = isSelected ? config.getSelectedMenuHeight() : config.getUnselectedMenuHeight();
         binder.lmiMenuItem.setLayoutParams(params);
 
         if(!config.isShowTextOnUnselected()) {

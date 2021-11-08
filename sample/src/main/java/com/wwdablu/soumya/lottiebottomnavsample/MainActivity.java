@@ -48,11 +48,6 @@ public class MainActivity extends AppCompatActivity implements ILottieBottomNavC
         mFragments.add(new SettingsFragment());
 
         FontItem fontItem = FontBuilder.create("·")
-                .selectedTextColor(Color.BLACK)
-                .unSelectedTextColor(Color.GRAY)
-                .selectedTextSize(16) //SP
-                .unSelectedTextSize(12) //SP
-                .setTypeface(Typeface.createFromAsset(getAssets(), "coffeesugar.ttf"))
                 .build();
 
         MenuItem item1 = MenuItemBuilder.create("tab_map.json", MenuItem.Source.Assets, fontItem, "dash")
@@ -60,23 +55,18 @@ public class MainActivity extends AppCompatActivity implements ILottieBottomNavC
                 .loop(false)
                 .build();
 
-        SpannableString spannableString = new SpannableString("·");
-        spannableString.setSpan(new ForegroundColorSpan(Color.RED), 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        fontItem = FontBuilder.create(fontItem).setTitle(spannableString).build();
         MenuItem item2 = MenuItemBuilder.createFrom(item1, fontItem)
                 .selectedLottieName("tab_find.json")
                 .unSelectedLottieName("tab_find.json")
                 .pausedProgress(0)
                 .build();
 
-        fontItem = FontBuilder.create(fontItem).setTitle("·").build();
         MenuItem item3 = MenuItemBuilder.createFrom(item1, fontItem)
                 .selectedLottieName("tab_car.json")
                 .unSelectedLottieName("tab_car.json")
                 .pausedProgress(0)
                 .build();
 
-        fontItem = FontBuilder.create(fontItem).setTitle("·").build();
         MenuItem item4 = MenuItemBuilder.createFrom(item1, fontItem)
                 .selectedLottieName("tab_store.json")
                 .unSelectedLottieName("tab_store.json")
@@ -105,6 +95,12 @@ public class MainActivity extends AppCompatActivity implements ILottieBottomNavC
     @Override
     public void onMenuSelected(int oldIndex, int newIndex, MenuItem menuItem) {
 
+        if (newIndex == 2) {
+            bottomNav.setBackgroundColor(Color.parseColor("#18191C"));
+        } else {
+            bottomNav.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        }
+
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fl_frag_container, mFragments.get(newIndex), mFragments.get(newIndex).getClass().getSimpleName())
                 .commitAllowingStateLoss();
@@ -118,14 +114,14 @@ public class MainActivity extends AppCompatActivity implements ILottieBottomNavC
     @Override
     public void onAnimationEnd(int index, MenuItem menuItem) {
 
-        if(index == 2 && menuItem.getTag() != null && "cupid".equalsIgnoreCase(menuItem.getTag().toString())) {
-           restoreMenuForMessage(menuItem);
+        if (index == 2 && menuItem.getTag() != null && "cupid".equalsIgnoreCase(menuItem.getTag().toString())) {
+            restoreMenuForMessage(menuItem);
         }
     }
 
     @Override
     public void onAnimationCancel(int index, MenuItem menuItem) {
-        if(index == 2 && menuItem.getTag() != null && "cupid".equalsIgnoreCase(menuItem.getTag().toString())) {
+        if (index == 2 && menuItem.getTag() != null && "cupid".equalsIgnoreCase(menuItem.getTag().toString())) {
             restoreMenuForMessage(menuItem);
         }
     }
@@ -141,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements ILottieBottomNavC
     @Override
     public void onChangeMenuIcon() {
 
-        if(bottomNav.getSelectedIndex() == 2) {
+        if (bottomNav.getSelectedIndex() == 2) {
 
             MenuItem cupidMessage = MenuItemBuilder.createFrom(bottomNav.getMenuItemFor(2))
                     .selectedLottieName("message_cupid.json")

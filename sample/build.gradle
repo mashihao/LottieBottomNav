@@ -34,4 +34,5 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'
     implementation project(':lottiebottomnav')
+    api 'com.airbnb.android:lottie:3.5.0'
 }
